@@ -1,4 +1,5 @@
 Vagrant-стенд c VLAN и LACP
+
 Описание домашнего задания
 
 в Office1 в тестовой подсети появляется сервера с доп интерфесами и адресами
@@ -29,6 +30,9 @@ testClient2 <-> testServer2
 
 ![Stend Scheme](https://github.com/DmitryV81/HW24_VLAN/blob/main/screenshot/structure.png)
 
+С помощью ansible конфигурируем сеть ВМ testClient1, testClient2, testServer1, testServer2
+
+Проверяем:
 
 ```
 [vagrant@testClient1 ~]$ ping 10.10.10.1
@@ -46,5 +50,13 @@ PING 10.10.10.1 (10.10.10.1) 56(84) bytes of data.
 64 bytes from 10.10.10.1: icmp_seq=3 ttl=64 time=0.724 ms
 64 bytes from 10.10.10.1: icmp_seq=4 ttl=64 time=0.678 ms
 ```
+
+testClient1 "видит" testServer1
+
+testClient2 "видит" testServer2
+
+Далее с ansible настраиваем бондинг между inetRouter и centralRouter
+
+При запущенном ping с inetRouter до centralRouter отключаем один из интерфейсов в бондинге (интерфейс eth1) на centralRouter, ping не пропадает, связь не потеряна.
 
 ![Test LACP](https://github.com/DmitryV81/HW24_VLAN/blob/main/screenshot/screenshot.png)
