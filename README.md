@@ -19,4 +19,4 @@ PING 10.10.10.1 (10.10.10.1) 56(84) bytes of data.
 64 bytes from 10.10.10.1: icmp_seq=4 ttl=64 time=0.678 ms
 ```
 
-
+![Test LACP](https://github.com/DmitryV81/HW24_VLAN/blob/main/screenshot/screenshot.png)
