@@ -1,5 +1,33 @@
-# HW24_VLAN
+Vagrant-стенд c VLAN и LACP
+Описание домашнего задания
 
+в Office1 в тестовой подсети появляется сервера с доп интерфесами и адресами
+
+в internal сети testLAN: 
+
+- testClient1 - 10.10.10.254
+
+- testClient2 - 10.10.10.254
+
+- testServer1- 10.10.10.1 
+
+- testServer2- 10.10.10.1
+
+Равести вланами:
+
+testClient1 <-> testServer1
+
+testClient2 <-> testServer2
+
+Между centralRouter и inetRouter "пробросить" 2 линка (общая inernal сеть) и объединить их в бонд, проверить работу c отключением интерфейсов
+
+Ход работы:
+
+В Vagrantfile описано создание 7 виртуальных машин (5 на CentOS 8 Stream, 2 на Ubuntu 20.04)
+
+Схема стенда:
+
+![Stend Scheme](https://github.com/DmitryV81/HW24_VLAN/blob/main/screenshot/structure.png)
 
 
 ```
